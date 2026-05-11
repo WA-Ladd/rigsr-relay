@@ -113,3 +113,4 @@ for details.
 Beads is independently licensed under MIT by gastownhall.
 This project's MIT license covers rigsr-relay only and makes
 no claim over Beads, Abacus, or n8n.
+
