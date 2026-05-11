@@ -1,0 +1,14 @@
+{
+  "relay_id": "990020261310001",
+  "type": "relay",
+  "from": "99",
+  "to": "00",
+  "task": "test relay end to end",
+  "message": "This is a test relay from User to Tech. Please confirm receipt.",
+  "context": null,
+  "history": null,
+  "bead_id": null,
+  "task_update": null,
+  "timestamp": "2026-05-10T20:00:00Z",
+  "status": "pending"
+}
