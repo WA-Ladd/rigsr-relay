@@ -1,0 +1,12 @@
+{
+  "relay_id": "02002026132266970",
+  "type": "direct",
+  "from": "02",
+  "to": "00",
+  "task": "third test relay write to Watson",
+  "message": "Rcvd",
+  "context": null,
+  "history": null,
+  "timestamp": "2026-05-12T23:41:06.970Z",
+  "status": "complete"
+}
