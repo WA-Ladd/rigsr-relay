@@ -1,0 +1,14 @@
+{
+  "relay_id": "990020261310001",
+  "type": "relay",
+  "from": "99",
+  "to": "06",
+  "task": "test saul file read",
+  "message": "Saul, confirm you can read this relay file.",
+  "context": null,
+  "history": null,
+  "bead_id": null,
+  "task_update": null,
+  "timestamp": "2026-05-11T00:00:00Z",
+  "status": "complete"
+}
