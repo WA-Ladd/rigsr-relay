@@ -1,0 +1,12 @@
+{
+  "relay_id": "TEST-001",
+  "type": "direct",
+  "from": "00",
+  "to": "06",
+  "task": "TEST",
+  "message": "Test relay to confirm Saul branch routing.",
+  "context": null,
+  "history": null,
+  "timestamp": "2026-05-12T00:00:00Z",
+  "status": "complete"
+}
