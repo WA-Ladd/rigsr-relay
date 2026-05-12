@@ -1,0 +1,12 @@
+{
+  "relay_id": "99022026132004",
+  "type": "direct",
+  "from": "99",
+  "to": "02",
+  "task": "PING",
+  "message": "Connectivity check. Respond with Rcvd.",
+  "context": null,
+  "history": null,
+  "timestamp": "2026-05-12T00:00:00Z",
+  "status": "complete"
+}
