@@ -1,0 +1,14 @@
+{
+  "relay_id": "00022026132001",
+  "type": "relay",
+  "from": "00",
+  "to": "02",
+  "task": "test relay write to Watson",
+  "message": "Watson, confirm receipt of this test relay from Tech.",
+  "context": null,
+  "history": null,
+  "bead_id": null,
+  "task_update": null,
+  "timestamp": "2026-05-12T00:00:00-04:00",
+  "status": "complete"
+}
