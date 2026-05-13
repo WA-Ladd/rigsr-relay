@@ -1,0 +1,12 @@
+{
+  "relay_id": "00032026133000001",
+  "type": "test",
+  "from": "00",
+  "to": "03",
+  "task": "PING",
+  "message": "Fives — index test relay. If you can read this, the inbox index is working. No action required.",
+  "context": null,
+  "history": null,
+  "timestamp": "2026-05-13T00:00:00Z",
+  "status": "pending"
+}
