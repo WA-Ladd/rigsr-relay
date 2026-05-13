@@ -1,0 +1,12 @@
+{
+  "relay_id": "00032026133000004",
+  "type": "direct",
+  "from": "00",
+  "to": "03",
+  "task": "BUILD_SAUL_INDEX_PHASE1",
+  "message": "Fives — begin Phase 1 implementation for Saul archive/index completion.\n\nObjective:\nCreate the minimal working archive/index layer for completed relays.\n\nCurrent target flow:\nrelay/outbox/*.json\n→ Saul reads completed relays\n→ Saul creates marker/index artifacts\n→ original relays remain untouched\n\nScope for this phase only:\n1. Create index/markers/ directory structure\n2. Create index/tags/ directory structure\n3. Define minimal marker JSON structure\n4. Implement minimal Saul indexing pass for completed relays\n5. Preserve RECORDS_IMMUTABLE and ARCHIVE_NO_OVERWRITE behavior\n\nConstraints:\n- No relay mutation\n- No overwrite behavior\n- No autonomous lifecycle redesign\n- No Beads integration yet\n- No logs/ share-link system yet\n- KISS implementation only\n\nSuggested minimal marker fields:\n- relay_id\n- source_file\n- from\n- to\n- timestamp\n- task\n- status\n\nDeliverable:\n- minimal working indexing implementation\n- copy-ready\n- scoped only to Phase 1 marker/index completion\n\nValidation required later via Watson before promotion.",
+  "context": null,
+  "history": null,
+  "timestamp": "2026-05-13T00:00:00Z",
+  "status": "complete"
+}
