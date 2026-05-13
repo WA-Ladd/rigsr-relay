@@ -1,0 +1,12 @@
+={
+  "relay_id": "00032026133000005",
+  "type": "test",
+  "from": "00",
+  "to": "03",
+  "task": "TIMESTAMP_JSON_MESSAGE_TRIGGER_TEST",
+  "message": "{\"test\":\"timestamp relay message trigger\",\"purpose\":\"Verify JSON embedded in message field triggers during relay processing.\",\"timestamp_source\":\"User supplied from World Clock visible time with EST/EDT offset adjustment\",\"timestamp\":\"2026-05-13T01:52:00-04:00\",\"note\":\"Outer relay timestamp also uses the supplied ISO 8601 value.\"}",
+  "context": null,
+  "history": null,
+  "timestamp": "2026-05-13T01:52:00-04:00",
+  "status": "complete"
+}
