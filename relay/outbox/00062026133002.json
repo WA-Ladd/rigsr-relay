@@ -1,0 +1,12 @@
+{
+  "relay_id": "00062026133002",
+  "type": "direct",
+  "from": "00",
+  "to": "06",
+  "task": "SUPERSEDE",
+  "message": "Saul — RELAY_NAMING_CONVENTION (locked 2026-05-07) requires supersession. The rule specifies .md as the relay file extension. During live pipeline testing on 2026-05-12, agents operating under this rule used .md extensions. The n8n filter checks for .json only, causing valid relay files to be rejected at the filter node.\n\nRELAY_FILE_FORMAT (locked 2026-05-10) specifies JSON structure but does not address file extension. All implemented relay files, filter logic, and Build Relay nodes use .json. The .md extension creates a conflict between the locked rule and the live implementation.\n\nAction required: supersede RELAY_NAMING_CONVENTION with a v2 that locks .json as the required extension. Move RULE_RELAY_NAMING_CONVENTION_v1.md to 99_Deprecated/rules/, update registry.json accordingly, and lock the new rule following PROMOTION_PROTOCOL.\n\nFilter has been temporarily updated to accept both .md and .json during the transition. This is a stabilization measure only — not a permanent dual-format policy.\n\nUser decision: .json is the locked extension going forward.",
+  "context": null,
+  "history": null,
+  "timestamp": "2026-05-12T00:00:00Z",
+  "status": "complete"
+}
