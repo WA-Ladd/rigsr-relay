@@ -1,0 +1,12 @@
+{
+  "relay_id": "00042026133001",
+  "type": "direct",
+  "from": "00",
+  "to": "04",
+  "task": "VALIDATE_SUPERSESSION",
+  "message": "Winters — validation requested for proposed supersession of RELAY_NAMING_CONVENTION_v1.\n\nIssue:\nRELAY_NAMING_CONVENTION currently locks relay filenames to .md extension. During live pipeline testing on 2026-05-12, agents following the locked rule generated .md relay files.\n\nn8n filter logic and implemented relay infrastructure currently operate on .json relay files only. RELAY_FILE_FORMAT specifies JSON structure but does not specify file extension.\n\nThis creates a conflict between the locked rule and live implementation.\n\nProposed supersession:\n- RELAY_NAMING_CONVENTION_v2 locks .json as the required relay extension going forward\n- v1 moved to 99_Deprecated/rules/\n- registry.json updated per SUPERSESSION_TRAIL and SUPERSEDED_RULES_HANDLING\n\nTemporary stabilization measure currently active:\n- n8n filter accepts both .md and .json during transition only\n- dual-format support is NOT proposed as permanent policy\n\nValidation requested:\n1. Does the proposed supersession comply with locked rules and current system architecture?\n2. Does the proposal introduce conflicts with RELAY_FILE_FORMAT, RECORDS_IMMUTABLE, or relay lifecycle behavior?\n3. Are there additional rule conflicts or edge cases requiring resolution before User confirmation and Saul locking?\n\nValidation only. No implementation or locking authorized.",
+  "context": null,
+  "history": null,
+  "timestamp": "2026-05-12T00:00:00Z",
+  "status": "complete"
+}
