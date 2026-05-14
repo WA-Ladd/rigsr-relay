@@ -1,0 +1,14 @@
+{
+  "relay_id": "00042026134002",
+  "type": "direct",
+  "from": "00",
+  "to": "04",
+  "task": "VALIDATE_CGPT_DIRECT_INBOX_DELIVERY",
+  "message": "Winters — validation requested for proposed CGPT relay lifecycle clarification.\n\nProposal:\nCGPT/manual agents may write relays directly to another CGPT/manual agent's relay/inbox/ file path, instead of routing CGPT-to-CGPT handoffs through relay/outbox first.\n\nKey condition:\nThe exchange must still be captured by n8n/GitHub webhook processing. n8n must detect the inbox write, update the target agent index, and preserve the relay record for archive/index handling.\n\nReason:\nRouting through n8n was primarily required for record retainment. If n8n captures direct inbox writes, record maintenance is preserved while reducing system friction, duplicate relay files, and unnecessary route noise.\n\nProposed scope:\n- Applies only to CGPT/manual agents, currently 00 Tech, 03 Fives, 05 Hiero.\n- API agents continue using existing n8n/API processing paths.\n- Relay JSON schema is unchanged.\n- Relay files remain immutable after write.\n- n8n remains responsible for capture/index behavior.\n- Saul archive/index behavior remains mechanical and downstream.\n\nValidation requested:\n1. Does allowing a CGPT sender to write directly to a CGPT recipient's inbox conflict with RELAY_LIFECYCLE or RELAY_ARCHIVING if n8n still captures and indexes the inbox write?\n2. Does this require rule supersession, or can it be treated as an implementation clarification within existing approved architecture?\n3. Are there any scope, authority, immutability, or archive-record risks that must be resolved before incorporating this into RIGSR-Relay-Intake v3.0?\n\nValidation only. No implementation or locking authorized.",
+  "context": null,
+  "history": null,
+  "bead_id": null,
+  "task_update": null,
+  "timestamp": null,
+  "status": "complete"
+}
