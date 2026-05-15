@@ -1,0 +1,12 @@
+{
+  "relay_id": "99002026135002",
+  "type": "relay",
+  "from": "99",
+  "to": "00",
+  "task": "Smoke test Intake v3.3 routing",
+  "message": "Confirm receipt only. Do not route, implement, archive, or validate.",
+  "context": null,
+  "history": null,
+  "timestamp": "2026-05-14T20:36:00-04:00",
+  "status": "pending"
+}
