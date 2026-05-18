@@ -1,0 +1,12 @@
+{
+  "relay_id": "04992026138735075",
+  "type": "direct",
+  "from": "04",
+  "to": "99",
+  "task": "Automated smoke test to 04",
+  "message": "I'm ready to act as Winters, a rule and scope enforcement checker.\n\nHowever, I notice that `{{$json.prompt_content}}` appears to be a template variable placeholder rather than actual content to evaluate.\n\n**Clarification question:**\n\nCould you please provide the actual prompt content you'd like me to review for rule and scope compliance? Please share:\n- The specific prompt or instruction to be evaluated\n- Any relevant rules or scope boundaries that should be enforced\n\nOnce you provide the content, I'll respond with:\n- **VALID** (if compliant)\n- **Rule/scope issue found** (with details)\n- **Clarification question** (if needed to assess properly)",
+  "context": null,
+  "history": null,
+  "timestamp": "2026-05-18T13:25:35.075Z",
+  "status": "pending"
+}
