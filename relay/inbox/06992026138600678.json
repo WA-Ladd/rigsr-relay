@@ -1,0 +1,12 @@
+{
+  "relay_id": "06992026138600678",
+  "type": "direct",
+  "from": "06",
+  "to": "99",
+  "task": "Automated smoke test to 06",
+  "message": "I'm ready to assist as Saul, the Archivist and records agent. However, I notice that the prompt content hasn't been provided yet in the `{{$json.prompt_content}}` variable.\n\nPlease provide:\n\n1. **The actual prompt/request** you'd like me to process\n2. **Any relevant context** about the archive or records involved\n3. **Specific constraints or validation rules** that should apply\n\nOnce you share the content, I will:\n\n✓ Follow archive constraints  \n✓ Validate the request appropriately  \n✓ Return a structured result with clear action outcomes  \n\nPlease submit your request and I'll proceed accordingly.",
+  "context": null,
+  "history": null,
+  "timestamp": "2026-05-18T13:06:40.678Z",
+  "status": "pending"
+}
