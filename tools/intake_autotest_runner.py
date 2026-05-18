@@ -3,7 +3,6 @@ import argparse
 import base64
 import json
 import os
-import re
 import sys
 import time
 import urllib.error
@@ -73,41 +72,16 @@ def get_file(path):
     return base64.b64decode(encoded).decode("utf-8")
 
 
-def list_dir(path):
-    try:
-        result = github_api("GET", f"contents/{path}?ref={BRANCH}")
-    except RuntimeError as e:
-        if " 404 " in str(e):
-            return []
-        raise
-    return result if isinstance(result, list) else []
+def read_index_pending(path):
+    content = get_file(path)
+    if content is None:
+        return []
+    data = json.loads(content)
+    return list(data.get("pending", []))
 
 
 def index_contains(index_path, relay_filename):
-    content = get_file(index_path)
-    if content is None:
-        return False
-    data = json.loads(content)
-    return relay_filename in data.get("pending", [])
-
-
-def find_response_to(original_relay_id, expected_from):
-    candidates = []
-    for item in list_dir("relay/inbox"):
-        name = item.get("name", "")
-        if not name.endswith(".json"):
-            continue
-        content = get_file(f"relay/inbox/{name}")
-        if content is None:
-            continue
-        try:
-            relay = json.loads(content)
-        except json.JSONDecodeError:
-            continue
-        if relay.get("from") == expected_from and relay.get("to") == "99":
-            if relay.get("history") == original_relay_id or original_relay_id in json.dumps(relay):
-                candidates.append((name, relay))
-    return candidates[-1] if candidates else None
+    return relay_filename in read_index_pending(index_path)
 
 
 def wait_mailbox(relay_filename, recipient, timeout, interval):
@@ -123,17 +97,19 @@ def wait_mailbox(relay_filename, recipient, timeout, interval):
     return False, get_file(inbox_path) is not None, index_contains(index_path, relay_filename)
 
 
-def wait_api(original_relay_id, recipient, timeout, interval):
+def wait_api(previous_user_pending, timeout, interval):
     deadline = time.time() + timeout
     while time.time() < deadline:
-        response = find_response_to(original_relay_id, recipient)
-        if response:
-            name, _relay = response
-            if index_contains("relay/index/99.json", name):
-                return True, name
+        current = read_index_pending("relay/index/99.json")
+        added = [name for name in current if name not in previous_user_pending]
+        if added:
+            newest = added[-1]
+            if get_file(f"relay/inbox/{newest}") is not None:
+                return True, newest
         time.sleep(interval)
-    response = find_response_to(original_relay_id, recipient)
-    return False, response[0] if response else None
+    current = read_index_pending("relay/index/99.json")
+    added = [name for name in current if name not in previous_user_pending]
+    return False, added[-1] if added else None
 
 
 def main():
@@ -147,6 +123,8 @@ def main():
     if recipient not in VALID_TO:
         print(json.dumps({"result": "FAIL", "reason": "unsupported recipient", "recipient": recipient}, indent=2))
         return 2
+
+    previous_user_pending = read_index_pending("relay/index/99.json") if recipient in API_TO else []
 
     relay_id = make_relay_id(recipient)
     relay_filename = f"{relay_id}.json"
@@ -185,7 +163,7 @@ def main():
         })
         result["result"] = "PASS" if ok and undefined_index_absent else "FAIL"
     else:
-        ok, response_file = wait_api(relay_id, recipient, args.timeout, args.interval)
+        ok, response_file = wait_api(previous_user_pending, args.timeout, args.interval)
         result.update({
             "expected_response_to": "99",
             "response_file": response_file,
