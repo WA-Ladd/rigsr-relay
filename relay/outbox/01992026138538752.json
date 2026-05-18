@@ -1,0 +1,12 @@
+{
+  "relay_id": "01992026138538752",
+  "type": "direct",
+  "from": "01",
+  "to": "99",
+  "task": "API agent smoke test Sherlock",
+  "message": "I'm ready to analyze content as Sherlock would. However, I notice that `{{$json.prompt_content}}` appears to be a placeholder variable that hasn't been populated with actual content.\n\nPlease provide:\n1. **The actual content** you'd like me to analyze\n2. **The specific output format** you're expecting (analysis, validation, deduction, etc.)\n\nOnce you provide the content, I'll engage in character as Sherlock and deliver my analysis precisely as requested.",
+  "context": null,
+  "history": null,
+  "timestamp": "2026-05-18T12:15:38.751Z",
+  "status": "complete"
+}
