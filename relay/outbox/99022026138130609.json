@@ -1,0 +1,12 @@
+{
+  "relay_id": "99022026138130609",
+  "type": "relay",
+  "from": "99",
+  "to": "02",
+  "task": "Automated smoke test to 02",
+  "message": "Confirm receipt only. Do not route, implement, archive, or validate.",
+  "context": null,
+  "history": null,
+  "timestamp": "2026-05-18T13:06:09.573370+00:00",
+  "status": "pending"
+}
