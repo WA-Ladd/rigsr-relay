@@ -1,0 +1,12 @@
+{
+  "relay_id": "00062026139110",
+  "type": "relay",
+  "from": "00",
+  "to": "06",
+  "task": "Relay index cleanup pass",
+  "message": "RIGSR Relay Intake routing tests have passed. --all PASS. --dead-letter PASS. Mailbox routes validated for 00, 03, 05, and 99. API routes validated for 01, 02, 04, and 06. API responses route back through 99. Objective: clean relay mailbox index state without deleting relay records. Scope: inspect relay/index/*.json, identify pending entries that are test artifacts or already handled, and prepare cleanup plan for removing handled/test relay filenames from pending lists. Do not delete relay/inbox or relay/outbox files. Do not change routing logic. Do not modify archive marker behavior. Output: list of index files needing cleanup, filenames proposed for removal from pending, any uncertainty or items that should remain pending. No execution unless separately authorized.",
+  "context": null,
+  "history": null,
+  "timestamp": "2026-05-18T09:51:10-04:00",
+  "status": "pending"
+}
