@@ -1,0 +1,10 @@
+{
+  "relay_id": "01992026138538752",
+  "source_file": "relay/outbox/01992026138538752.json",
+  "from": "01",
+  "to": "99",
+  "task": "API agent smoke test Sherlock",
+  "timestamp": "2026-05-18T12:15:38.751Z",
+  "indexed_at": "2026-05-18T12:15:41.353Z",
+  "status": "complete"
+}
