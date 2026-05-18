@@ -1,0 +1,12 @@
+{
+  "relay_id": "00062026139130",
+  "type": "relay",
+  "from": "00",
+  "to": "06",
+  "task": "Relay index cleanup plan with current state",
+  "message": "Correction/clarification: API-agent indexes 01, 02, 04, and 06 do not exist by design. API agents respond back to 99; only mailbox recipients currently have index files. Current mailbox index state from GitHub main: relay/index/00.json pending: [06002026138669355.json]. relay/index/03.json pending: [99032026138132444.json]. relay/index/05.json pending: [99052026138132449.json]. relay/index/99.json pending: [06992026138746908.json]. Cleanup criteria for this pass: these are test/handled relay artifacts from the routing/autotest stabilization session. Prepare a cleanup plan to remove these filenames from pending lists only. Do not delete relay/inbox or relay/outbox files. Do not change routing logic. Do not modify archive marker behavior. No execution unless separately authorized. Output only: index files needing cleanup, filenames proposed for removal from pending, items that should remain pending if any, uncertainties if any.",
+  "context": null,
+  "history": "06002026138669355.json",
+  "timestamp": "2026-05-18T09:51:30-04:00",
+  "status": "pending"
+}
