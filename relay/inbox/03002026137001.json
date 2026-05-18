@@ -1,0 +1,14 @@
+{
+  "relay_id": "03002026137001",
+  "type": "relay",
+  "from": "03",
+  "to": "00",
+  "task": "STATUS_FRONTEND_SERVER_RELAY_UI_PASS",
+  "message": "To: Tech\nFrom: Fives\n\nStatus update on frontend/server relay UI pass.\n\nCompleted artifacts produced in chat:\n- rigsr_auto_clear.html\n- server_auto_clear.py\n\nImplemented scope from relay 00032026136002:\n- Added User / 99 as visible mailbox participant.\n- Expanded mailbox polling to 99 and 00-06.\n- Added inbox viewer for relay/index/<id>.json pending files.\n- Added relay open/display behavior for relay/inbox/<filename>.\n- Added structured relay creation form.\n- Kept legacy text relay parser as helper behavior only.\n- Added server endpoint POST /relay/submit.\n- Added server-generated relay_id using locked naming pattern.\n- Preserved session logging and END SESSION behavior.\n- Did not modify n8n workflow, relay rules, registry files, archive lifecycle, Saul archival behavior, or relay status promotion.\n\nFollow-up fixes after user testing:\n- Moved relay creation UI into a slide-out drawer from the agent list.\n- Prepopulates relay target based on selected agent.\n- Added CREATE RELAY button/label styled like the rest of UI.\n- Locked normal chat send for CGPT/manual agents Tech, Fives, and Hiero.\n- Added mailbox index clearing after opening pending relays, replacing manual-only mark read behavior.\n- Added fallback CLEAR beside pending relay items.\n- Added tolerant server handling for agent/agent_id/to and filename/relay_file/relay_filename.\n- Corrected local relay repo path handling for nested path: RIGSR/RIGSR_Archive/rigsr-relay.\n\nCurrent state:\n- Latest recommended pair is rigsr_auto_clear.html + server_auto_clear.py.\n- User requested this status relay after the latest auto-clear patch.\n- Live validation is not confirmed yet after replacing files and restarting local server.\n\nKnown unresolved / watch items:\n- Need user-side live test confirming pending mail badge clears automatically after opening a relay.\n- Need user-side live test confirming structured relay submit creates file and updates recipient index successfully.\n- Need user-side confirmation that CGPT/manual chat lock behavior is acceptable in daily use.\n\nNo source-of-truth promotion requested or performed.",
+  "context": null,
+  "history": "relay/inbox/00032026136002.json",
+  "bead_id": null,
+  "task_update": null,
+  "timestamp": "2026-05-17T00:00:00-04:00",
+  "status": "pending"
+}
