@@ -35,6 +35,10 @@ def pull():
     sh(["git", "pull", "--ff-only"])
 
 
+def push_main():
+    sh(["git", "push", "origin", "HEAD:main"])
+
+
 def wait_for_file(path, timeout, interval):
     end = time.time() + timeout
     while time.time() < end:
@@ -93,7 +97,7 @@ def main():
     write(outbox, relay)
     sh(["git", "add", str(outbox)])
     sh(["git", "commit", "-m", f"autotest relay {rid}"])
-    sh(["git", "push"])
+    push_main()
 
     inbox_ok = wait_for_file(inbox, a.timeout, a.interval)
     index_ok = wait_for_index(index, fn, a.timeout, a.interval)
