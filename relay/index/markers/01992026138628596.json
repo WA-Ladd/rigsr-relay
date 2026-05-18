@@ -1,0 +1,10 @@
+{
+  "relay_id": "01992026138628596",
+  "source_file": "relay/outbox/01992026138628596.json",
+  "from": "01",
+  "to": "99",
+  "task": "Automated smoke test to 01",
+  "timestamp": "2026-05-18T12:17:08.596Z",
+  "indexed_at": "2026-05-18T12:17:11.220Z",
+  "status": "complete"
+}
