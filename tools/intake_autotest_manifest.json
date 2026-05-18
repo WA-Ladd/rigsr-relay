@@ -1,0 +1,70 @@
+{
+  "name": "intake_autotest_manifest",
+  "purpose": "Single-source smoke test manifest for Intake routing verification.",
+  "created_for": "Reduce manual relay testing and prevent ad hoc debugging drift.",
+  "repo": "WA-Ladd/rigsr-relay",
+  "tests": [
+    {
+      "id": "A_USER_TO_TECH",
+      "relay": {
+        "type": "relay",
+        "from": "99",
+        "to": "00",
+        "task": "Smoke test User to Tech routing",
+        "message": "Confirm receipt only. Do not route, implement, archive, or validate.",
+        "context": null,
+        "history": null,
+        "status": "pending"
+      },
+      "expect": {
+        "inbox_file": true,
+        "index_file": "relay/index/00.json",
+        "index_contains_relay_filename": true,
+        "dead_letter": false,
+        "undefined_index": false
+      }
+    },
+    {
+      "id": "B_USER_TO_FIVES",
+      "relay": {
+        "type": "relay",
+        "from": "99",
+        "to": "03",
+        "task": "Smoke test User to Fives routing",
+        "message": "Confirm receipt only. Do not implement.",
+        "context": null,
+        "history": null,
+        "status": "pending"
+      },
+      "expect": {
+        "inbox_file": true,
+        "index_file": "relay/index/03.json",
+        "index_contains_relay_filename": true,
+        "dead_letter": false,
+        "undefined_index": false
+      }
+    },
+    {
+      "id": "C_INVALID_RECIPIENT",
+      "relay": {
+        "type": "relay",
+        "from": "99",
+        "to": "98",
+        "task": "Smoke test invalid recipient handling",
+        "message": "This should route to dead letter only.",
+        "context": null,
+        "history": null,
+        "status": "pending"
+      },
+      "expect": {
+        "inbox_file": false,
+        "dead_letter": true,
+        "undefined_index": false
+      }
+    }
+  ],
+  "known_open_design_item": {
+    "recipient": "99",
+    "issue": "User/front-end terminal handling needs explicit route; do not treat as agent failure until design is set."
+  }
+}
