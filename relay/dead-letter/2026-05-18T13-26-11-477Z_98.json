@@ -1,0 +1,11 @@
+{
+  "relay_id": "99982026138132608",
+  "type": "error",
+  "from": "routing",
+  "to": "98",
+  "error": "invalid_to_code",
+  "message": "Relay could not be routed by RIGSR-Relay-Intake-v3.2-draft",
+  "source_file": "relay/outbox/99982026138132608.json",
+  "timestamp": "2026-05-18T13:26:11.477Z",
+  "status": "failed"
+}
