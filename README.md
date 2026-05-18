@@ -4,6 +4,8 @@
 
 Communication layer to work with ChatGPT agents more dynamically via n8n and Beads.
 
+## Foreword - I know very little coding, by way of trying to make a game and getting tired of copy and paste I decided to see what there was for a work around. Maybe there was one and I didn't know what to look it up as, but as far as I could tell this didn't exist already, or nobody thought ot use it this way. I used ChatGPT and Claude alternatively to build it. My setup also has API agents who are called on for tasks like code and logic verification. This was my work around, I didn't code it, I directed it's building. So there very likely are tweaks that can improve it. I hope this helps someone create something amazing, or something that makes them feel amazing for having accomplised something. - WA-Ladd
+
 ## Overview
 
 rigsr-relay is the communication backbone for the RIGSR agent system. It provides a structured, model-agnostic relay layer between n8n workflows and chat-based AI agents using GitHub as the shared medium.
