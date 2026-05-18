@@ -1,0 +1,12 @@
+{
+  "relay_id": "99982026139001",
+  "type": "relay",
+  "from": "99",
+  "to": "98",
+  "task": "Invalid recipient dead-letter smoke test",
+  "message": "This relay should route to dead-letter only.",
+  "context": null,
+  "history": null,
+  "timestamp": "2026-05-18T00:00:00-04:00",
+  "status": "pending"
+}
